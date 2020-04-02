@@ -20,6 +20,6 @@ export async function createBOFUser(bofUser: IBackofficeUser) {
     lastname,
     role
   };
-  const res = await axios.post("/backoffice_user", data);
+  const res = await axios.post("/backoffice-user", data);
   return res;
 }

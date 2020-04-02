@@ -1,17 +1,14 @@
 import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
 
 const configs: AxiosRequestConfig = {
-  baseURL: "http://localhost:9119/api/v1"
+  baseURL: process.env.REACT_APP_BASEURL_ENDPOINT
 };
 
 const instance: AxiosInstance = axios.create(configs);
 
 instance.interceptors.request.use((config: AxiosRequestConfig) => {
   return {
-    ...config,
-    headers: {
-      "x-projectkey": 1234
-    }
+    ...config
   };
 });
 
